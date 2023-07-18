@@ -3508,6 +3508,11 @@ class CosPlugin(PluginDistroTag):
     pass
 
 
+class ArchPlugin(PluginDistroTag):
+    """Tagging class for Arch Linux"""
+    pass
+
+
 class IndependentPlugin(PluginDistroTag):
     """Tagging class for plugins that can run on any platform"""
     pass
