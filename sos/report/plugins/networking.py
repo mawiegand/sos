@@ -7,7 +7,8 @@
 # See the LICENSE file in the source distribution for further information.
 
 from sos.report.plugins import (Plugin, RedHatPlugin, UbuntuPlugin,
-                                DebianPlugin, SoSPredicate, PluginOpt)
+                                DebianPlugin, ArchPlugin, SoSPredicate,
+                                PluginOpt)
 
 
 class Networking(Plugin):
@@ -343,6 +344,10 @@ class UbuntuNetworking(Networking, UbuntuPlugin, DebianPlugin):
             r"(\s+password:).*",
             r"\1 ******"
         )
+
+
+class ArchNetworking(Networking, ArchPlugin):
+    trace_host = "archlinux.org"
 
 
 # vim: set et ts=4 sw=4 :
