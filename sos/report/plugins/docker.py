@@ -10,7 +10,7 @@
 
 from sos.report.plugins import (Plugin, RedHatPlugin, UbuntuPlugin,
                                 SoSPredicate, CosPlugin, PluginOpt,
-                                DebianPlugin)
+                                DebianPlugin, ArchPlugin)
 
 
 class Docker(Plugin, CosPlugin):
@@ -144,5 +144,13 @@ class UbuntuDocker(Docker, UbuntuPlugin, DebianPlugin):
             "/etc/default/docker",
             "/run/docker/libcontainerd/containerd/events.log"
         ])
+
+
+class ArchDocker(Docker, ArchPlugin):
+
+    packages = ("docker")
+
+    def setup(self):
+        super().setup()
 
 # vim: set et ts=4 sw=4 :
